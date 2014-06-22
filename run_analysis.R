@@ -1,10 +1,20 @@
 ############## Question 1 ###########################################
 
+# Check if zip file exists on working directory and if not, it downloads it
+if (!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
+       fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+       download.file(fileUrl, destfile="./getdata-projectfiles-UCI HAR Dataset.zip") 
+}
+
+# Unzip the zip file getdata-projectfiles-UCI HAR Dataset.zip  
+unzip("getdata-projectfiles-UCI HAR Dataset.zip")
+
+
 # Insert the test dataset into R as test
-test <- read.table("test//X_test.txt", quote="\"")
+test <- read.table("UCI HAR Dataset//test//X_test.txt", quote="\"")
 
 # Insert the train dataset into R as train
-train <- read.table("train//X_train.txt", quote="\"")
+train <- read.table("UCI HAR Dataset//train//X_train.txt", quote="\"")
 
 # Create the full dataset (total) by combining the train & test dataset
 total <- rbind(test,train)
@@ -28,10 +38,10 @@ total <- total[, columns]
 ############### Question 3,4 ##########################################
 
 # Insert the test activity number dataset into R
-test_activ_numb <- read.table("test//y_test.txt", quote="\"")
+test_activ_numb <- read.table("UCI HAR Dataset//test//y_test.txt", quote="\"")
 
 # Insert the train activity number dataset into R
-train_activ_numb <- read.table("train//y_train.txt", quote="\"")
+train_activ_numb <- read.table("UCI HAR Dataset//train//y_train.txt", quote="\"")
 
 # Create the full activity number dataset by combining the train 
 # & test activity number dataset
@@ -41,7 +51,7 @@ all_activ_numb <- rbind(test_activ_numb,train_activ_numb)
 all_activ_numb$V1 <- as.factor(all_activ_numb$V1)
 
 # Insert the activity labels dataset into R
-activity_labels <- read.table("activity_labels.txt", quote="\"")
+activity_labels <- read.table("UCI HAR Dataset//activity_labels.txt", quote="\"")
 
 # Merge activity labels & numbers 
 activity_labels_final <- merge(all_activ_numb,activity_labels)
@@ -58,14 +68,14 @@ total$Activity <- activity_labels_final$V2
 ############## Question 5 #####################################
 
 # Insert the test subject number dataset into R
-test_subjects <- read.table("test//subject_test.txt", quote="\"")
+test_subjects <- read.table("UCI HAR Dataset//test//subject_test.txt", quote="\"")
 
 # Insert the train subject number dataset into R
-train_subjects <- read.table("train//subject_train.txt", quote="\"")
+train_subjects <- read.table("UCI HAR Dataset//train//subject_train.txt", quote="\"")
 
 # Create the full subject dataset by combining the train & test subject
 # number dataset
-subjects <- rbind(read.table("test//subject_test.txt", quote="\""),read.table("train//subject_train.txt", quote="\""))
+subjects <- rbind(read.table("UCI HAR Dataset//test//subject_test.txt", quote="\""),read.table("train//subject_train.txt", quote="\""))
 
 # Insert subject as a new variable in the total dataset  
 total$Subject <- subjects$V1
