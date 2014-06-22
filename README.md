@@ -1,6 +1,7 @@
 ==================================================================
-Course Project for Getting and Cleaning Data regarding 
-Human Activity Recognition Using Smartphones Dataset
+Course Project for Getting and Cleaning Data Coursera course,
+regarding Human Activity Recognition Using Smartphones Dataset
+
 ==================================================================
 
 
