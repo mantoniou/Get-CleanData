@@ -17,8 +17,8 @@ Subject
 				
 
 
-		The next 86 variables are averages of each of the following variables,
-		which present different measures for Samsung Galaxy S:
+The next 86 variables are averages of each of the following variables,
+which present different measures for Samsung Galaxy S:
 				
 tBodyAcc-mean()-X	
 
