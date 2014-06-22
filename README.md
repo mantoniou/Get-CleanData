@@ -11,7 +11,7 @@ The dataset includes the following files:
 
 - 'CodeBook.md': Includes all information about the variables used, all the appropriate info for the data transformations in order to get the clean dataset.
 
-- 'run_analysis.R': This is the code to reproduce the data cleansing and transformation. Just run the script on your local machine
+- 'run_analysis.R': This is the code to reproduce the data cleansing and transformation. There are comments for each step on the code indicating what and why it is done
 
 - 'original_features_info.md': The original features file, explaining exactly what measure have been recorded.
 

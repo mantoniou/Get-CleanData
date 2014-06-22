@@ -193,6 +193,23 @@ angle(Y,gravityMean)
 angle(Z,gravityMean)
 
 =====================================================================
-
+All the comments of how this dataset were created are in the script 
+file (run_analysis.R) as extra comments after every command that is
+executed. 
+At first the test and the train set were merged, after 
+obtaining the data (checked if file exists, otherwise it is 
+downloaded and unziped. Next, only the measurements on the mean and 
+standard deviation were extracted (contained mean or std on the 
+descriptive name of the variable). The descriptive names of the 
+activities were used after applying the appropriate commands (used 
+the y_ files and the activity labels files). The labels of the the 
+variable names were replaced with the descriptive
+labels (explaining what each variable measures, features file was used). 
+Finally, the tidy data set with the average of each variable for each 
+activity and each subject was created. Subjects were inserted in the 
+dataset and then after using plyr & reshape2 packages the data set was 
+melted and then by using dcast function with average was created 
+ 
+=====================================================================
 Further information on the exact description of each of the
 measured variables, exist on file original_features_info.md 
