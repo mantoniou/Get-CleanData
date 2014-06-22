@@ -76,15 +76,24 @@ total$Activity_Subject <- paste(total$Activity, total$Subject, sep="_")
 # Create a vector with just the variables with measures
 totalnames <- names(total[1:86])
 
-# Create the melt dataset where we melt th???????????????
+# Check if reshape2 library exists & if not it installs it
+packages <- c("reshape2")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+        install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+
+# Loads the library reshape2
+library("reshape2")
+
+# Reshape the data by creating the melt dataset where we melt the data 
+# in order to have detailed data
 melt <- melt(total, id=c("Activity_Subject"), measure.vars=totalnames)
 
+
 # Create the second dataset with the averages of all variables by 
-# activity and subject
+# activity and subject by using the "melted" dataset
 total_average <- dcast(melt, Activity_Subject ~ variable, mean)
 
-# Re-arrange the columns ??????????????????
-total_average <- total_average[,c(89,88,2:87)]
 
 # Extract the dataset into the working directory as total_average
-write.table(total_average,"total_average.txt", sep=",")
+write.table(total_average,"total_average.txt", sep=" ", row.names=F)
