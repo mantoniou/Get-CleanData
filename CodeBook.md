@@ -1,7 +1,7 @@
 Final Dataset Description 
 ====================================================================
 
-Activity		
+-Activity		
 		Indicates the Activity of each observation. It includes the following Values:
 		LAYING
 		SITTING
@@ -10,7 +10,7 @@ Activity
 		WALKING_DOWNSTAIRS
 		WALKING_UPSTAIRS
 
-Subject			
+-Subject			
 		Indicates the subject number (1 to 30) 				
 				
 
@@ -18,13 +18,13 @@ Subject
 		The next 86 variables are averages of each of the following variables,
 		which present different measures for Samsung Galaxy S:
 				
-tBodyAcc-mean()-X	
+-tBodyAcc-mean()-X	
 
-tBodyAcc-mean()-Y	
+-tBodyAcc-mean()-Y	
 
-tBodyAcc-mean()-Z	
+-tBodyAcc-mean()-Z	
 
-tBodyAcc-std()-X	
+-tBodyAcc-std()-X	
 
 tBodyAcc-std()-Y	
 
