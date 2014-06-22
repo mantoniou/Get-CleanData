@@ -1,12 +1,21 @@
 Final Dataset Description 
-=================
+====================================================================
 
-Activity_Subject
-				Indicates the Activity and the subject number of each observation.
-				The Activity and the subject are separated by the special character "_"
+Activity		Indicates the Activity of each observation.
+				It includes the following Values:
+				LAYING
+				SITTING
+				STANDING
+				WALKING
+				WALKING_DOWNSTAIRS
+				WALKING_UPSTAIRS
+
+Subject			Indicates the subject number (1 to 30) 				
 				
 
-
+				
+The next 86 variables are averages of each of the following variables,
+which present different measures for Samsung Galaxy S2:
 				
 tBodyAcc-mean()-X	
 
@@ -180,52 +189,7 @@ angle(Y,gravityMean)
 
 angle(Z,gravityMean)
 
+=====================================================================
 
-
-
-
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
-energy(): Energy measure. Sum of the squares divided by the number of values. 
-iqr(): Interquartile range 
-entropy(): Signal entropy
-arCoeff(): Autorregresion coefficients with Burg order equal to 4
-correlation(): correlation coefficient between two signals
-maxInds(): index of the frequency component with largest magnitude
-meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-skewness(): skewness of the frequency domain signal 
-kurtosis(): kurtosis of the frequency domain signal 
-bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-angle(): Angle between to vectors.
-
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
-
-The complete list of variables of each feature vector is available in 'features.txt'
-
-
+Further information on the exact description of each of the
+measured variables, exist on file original_features_info.md 

@@ -13,6 +13,7 @@ The dataset includes the following files:
 
 - 'run_analysis.R': This is the code to reproduce the data cleansing and transformation. Just run the script on your local machine
 
+- 'original_features_info.md': The original features file, explaining exactly what measure have been analysed.
 
 Notes: 
 ======
