@@ -1,19 +1,20 @@
 Final Dataset Description 
 ====================================================================
 
-Activity		Indicates the Activity of each observation.
-				It includes the following Values:
-				LAYING
-				SITTING
-				STANDING
-				WALKING
-				WALKING_DOWNSTAIRS
-				WALKING_UPSTAIRS
+Activity		
+Indicates the Activity of each observation. It includes the following Values:
+LAYING
+SITTING
+STANDING
+WALKING
+WALKING_DOWNSTAIRS
+WALKING_UPSTAIRS
 
-Subject			Indicates the subject number (1 to 30) 				
+Subject			
+Indicates the subject number (1 to 30) 				
 				
 
-				
+
 The next 86 variables are averages of each of the following variables,
 which present different measures for Samsung Galaxy S2:
 				
