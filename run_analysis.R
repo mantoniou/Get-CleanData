@@ -81,13 +81,13 @@ subjects <- rbind(read.table("UCI HAR Dataset//test//subject_test.txt", quote="\
 total$Subject <- subjects$V1
 
 # Combine Activity & Subject in the total dataset
-total$Activity_Subject <- paste(total$Activity, total$Subject, sep="_")
+total$Activity_Subject <- paste(total$Activity, total$Subject, sep="-")
 
 # Create a vector with just the variables with measures
 totalnames <- names(total[1:86])
 
 # Check if reshape2 library exists & if not it installs it
-packages <- c("reshape2")
+packages <- c("reshape2", "plyr")
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
         install.packages(setdiff(packages, rownames(installed.packages())))  
 }
@@ -103,6 +103,24 @@ melt <- melt(total, id=c("Activity_Subject"), measure.vars=totalnames)
 # Create the second dataset with the averages of all variables by 
 # activity and subject by using the "melted" dataset
 total_average <- dcast(melt, Activity_Subject ~ variable, mean)
+
+# Create a list of splitted column Activity_Subject (in order
+# to make 2 separate variables Activity, Subject)
+list <- strsplit(total_average$Activity_Subject, "-")
+
+# Load the plyr package
+library("plyr")
+
+# make a dataframe of the list
+df <- ldply(list)
+
+# Insert the Activity and Subject Variables into the final dataset
+total_average$Activity <- df$V1
+total_average$Subject <- df$V2
+
+# Change the order of the variables and delete the combined variable 
+# (Activity_Subject)
+total_average <- total_average[c(88,89,2:87)]
 
 
 # Extract the dataset into the working directory as total_average
